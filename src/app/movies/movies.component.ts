@@ -25,4 +25,10 @@ export class MoviesComponent {
       this.movies = movies;
     });
   }
+
+  addMovie(name: string, imageUrl: string, description: string): void {
+    this.movieService
+      .addMovie({ name, imageUrl, description } as Movie)
+      .subscribe((movie) => this.movies.push(movie));
+  }
 }
