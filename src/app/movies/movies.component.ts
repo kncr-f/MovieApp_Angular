@@ -33,7 +33,7 @@ export class MoviesComponent {
   }
 
   deleteMovie(movie: Movie): void {
-    //this.movies = this.movies.filter((m) => m !== movie);
+    this.movies = this.movies.filter((m) => m !== movie);
     this.movieService.delete(movie).subscribe();
   }
 }
