@@ -31,4 +31,9 @@ export class MoviesComponent {
       .addMovie({ name, imageUrl, description } as Movie)
       .subscribe((movie) => this.movies.push(movie));
   }
+
+  deleteMovie(movie: Movie): void {
+    //this.movies = this.movies.filter((m) => m !== movie);
+    this.movieService.delete(movie).subscribe();
+  }
 }
